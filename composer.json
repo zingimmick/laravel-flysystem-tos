@@ -1,0 +1,73 @@
+{
+    "name": "zing/laravel-flysystem-tos",
+    "description": "Flysystem Adapter for TOS",
+    "keywords": ["tos", "laravel", "flysystem", "filesystem", "storage", "file", "files"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zingimmick",
+            "email": "zingimmick@outlook.com",
+            "homepage": "https://github.com/zingimmick"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "illuminate/support": "^6.0 || ^7.0 || ^8.0",
+        "zing/flysystem-tos": "^1.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1.3.3 || ^1.4.2",
+        "orchestra/testbench": "^4.0 || ^5.0 || ^6.0",
+        "phpunit/phpunit": "^8.0,<8.5.12 || ^9.3.3",
+        "zing/coding-standard": "^6.4 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zing\\LaravelFlysystem\\Tos\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zing\\LaravelFlysystem\\Tos\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "lint:rector": "@fix:rector --dry-run",
+        "lint:ecs": "ecs check --ansi",
+        "fix:rector": "rector process --ansi",
+        "fix:ecs": "@lint:ecs --fix",
+        "test:phpunit": "phpunit --colors=always",
+        "lint": [
+            "@lint:rector",
+            "@lint:ecs"
+        ],
+        "fix": [
+            "@fix:rector",
+            "@fix:ecs"
+        ],
+        "test": [
+            "@test:phpunit"
+        ],
+        "changelog": [
+            "changelog-linker dump-merges --ansi",
+            "changelog-linker link --ansi",
+            "changelog-linker cleanup --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zing\\LaravelFlysystem\\Tos\\TosServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
