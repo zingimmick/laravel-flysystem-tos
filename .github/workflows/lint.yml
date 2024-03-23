@@ -1,0 +1,13 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - '[0-9]+.x'
+
+jobs:
+  lint:
+    name: Lint
+    uses: zingimmick/.github/.github/workflows/lint.yml@main

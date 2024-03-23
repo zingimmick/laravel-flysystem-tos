@@ -1,0 +1,10 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    level: max
+    paths:
+        - src
+        - tests
+    ignoreErrors:
+        - '#Call to an undefined method League\\Flysystem\\FilesystemInterface::getAdapter\(\).#'
