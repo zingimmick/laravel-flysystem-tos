@@ -1,17 +1,17 @@
 # Laravel Flysystem TOS
 
-<p align="center">
-<a href="https://github.com/zingimmick/laravel-flysystem-tos/actions"><img src="https://github.com/zingimmick/laravel-flysystem-tos/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://codecov.io/gh/zingimmick/laravel-flysystem-tos"><img src="https://codecov.io/gh/zingimmick/laravel-flysystem-tos/branch/1.x/graph/badge.svg" alt="Code Coverage" /></a>
-<a href="https://packagist.org/packages/zing/laravel-flysystem-tos"><img src="https://poser.pugx.org/zing/laravel-flysystem-tos/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/zing/laravel-flysystem-tos"><img src="https://poser.pugx.org/zing/laravel-flysystem-tos/downloads" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/zing/laravel-flysystem-tos"><img src="https://poser.pugx.org/zing/laravel-flysystem-tos/v/unstable.svg" alt="Latest Unstable Version"></a>
-<a href="https://packagist.org/packages/zing/laravel-flysystem-tos"><img src="https://poser.pugx.org/zing/laravel-flysystem-tos/license" alt="License"></a>
-</p>
+TOS storage filesystem for Laravel based on [zing/flysystem-tos](https://github.com/zingimmick/flysystem-tos)
+
+[![Build Status](https://github.com/zingimmick/laravel-flysystem-tos/workflows/tests/badge.svg)](https://github.com/zingimmick/laravel-flysystem-tos/actions)
+[![Code Coverage](https://codecov.io/gh/zingimmick/laravel-flysystem-tos/branch/2.x/graph/badge.svg)](https://codecov.io/gh/zingimmick/laravel-flysystem-tos)
+[![Latest Stable Version](https://poser.pugx.org/zing/laravel-flysystem-tos/v/stable.svg)](https://packagist.org/packages/zing/laravel-flysystem-tos)
+[![Total Downloads](https://poser.pugx.org/zing/laravel-flysystem-tos/downloads)](https://packagist.org/packages/zing/laravel-flysystem-tos)
+[![Latest Unstable Version](https://poser.pugx.org/zing/laravel-flysystem-tos/v/unstable.svg)](https://packagist.org/packages/zing/laravel-flysystem-tos)
+[![License](https://poser.pugx.org/zing/laravel-flysystem-tos/license)](https://packagist.org/packages/zing/laravel-flysystem-tos)
 
 > **Requires**
-> - **[PHP 7.2+](https://php.net/releases/)**
-> - **[Laravel 6.0+](https://github.com/laravel/laravel)**
+> - **[PHP 8.0+](https://php.net/releases/)**
+> - **[Laravel 9.0+](https://laravel.com/docs/releases)**
 
 ## Version Information
 
@@ -23,7 +23,7 @@
 Require Laravel Flysystem TOS using [Composer](https://getcomposer.org):
 
 ```bash
-composer require zing/laravel-flysystem-tos:^1.0
+composer require zing/laravel-flysystem-tos
 ```
 
 ## Configuration
@@ -36,12 +36,12 @@ return [
         'tos' => [
             'driver' => 'tos',
             'root' => '',
-            'ak' => env('TOS_AK'),
-            'sk' => env('TOS_SK'),
-            'region' => env('TOS_REGION'),
+            'access_key_id' => env('TOS_ACCESS_KEY_ID'),
+            'access_key_secret' => env('TOS_ACCESS_KEY_SECRET'),
             'bucket' => env('TOS_BUCKET'),
             'endpoint' => env('TOS_ENDPOINT'),
-            'securityToken' => env('TOS_SECURITY_TOKEN'),
+            'is_cname' => env('TOS_IS_CNAME', false),
+            'security_token' => env('TOS_SECURITY_TOKEN'),
         ],
     ]
 ];
@@ -50,9 +50,8 @@ return [
 ## Environment
 
 ```dotenv
-TOS_AK=
-TOS_SK=
-TOS_REGION=
+TOS_ACCESS_KEY_ID=
+TOS_ACCESS_KEY_SECRET=
 TOS_BUCKET=
 TOS_ENDPOINT=
 TOS_IS_CNAME=false

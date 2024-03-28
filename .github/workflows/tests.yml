@@ -10,8 +10,55 @@ on:
 
 jobs:
   tests:
-    name: Tests
-    uses: zingimmick/.github/.github/workflows/tests-laravel.yml@main
-    secrets:
-      codecov-token: ${{ secrets.CODECOV_TOKEN }}
-      cc-test-reporter-id: ${{ secrets.CC_TEST_REPORTER_ID }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [ '8.0', 8.1, 8.2, 8.3 ]
+        stability: [ lowest, highest ]
+
+    name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@2.30.1
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: xdebug
+
+      - name: Setup problem matchers for PHPUnit
+        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - if: matrix.php == '8.2'
+        name: Require packages for PHP 8.2
+        run: composer require nesbot/carbon:^2.62.1 --no-update
+
+      - if: matrix.php == '8.3'
+        name: Require packages for PHP 8.3
+        run: composer require nesbot/carbon:^2.62.1 --no-update
+
+      - name: Install dependencies
+        uses: ramsey/composer-install@v3
+        with:
+          dependency-versions: ${{ matrix.stability }}
+
+      - name: Execute tests
+        run: composer run-script test:phpunit -- --coverage-clover coverage.xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        continue-on-error: true
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload coverage to Code Climate
+        uses: paambaati/codeclimate-action@v5.0.0
+        continue-on-error: true
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: ls
+          coverageLocations: ${{github.workspace}}/coverage.xml:clover

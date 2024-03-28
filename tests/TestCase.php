@@ -66,5 +66,35 @@ abstract class TestCase extends BaseTestCase
             'endpoint' => 'https://your-endpoint',
             'is_cname' => true,
         ]);
+        Config::set('filesystems.disks.tos-read-only', [
+            'driver' => 'tos',
+            'key' => 'aW52YWxpZC1rZXk=',
+            'secret' => 'aW52YWxpZC1zZWNyZXQ=',
+            'region' => 'cn-beijing',
+            'bucket' => 'your-bucket',
+            'endpoint' => 'https://your-endpoint',
+            'read-only' => true,
+        ]);
+        Config::set('filesystems.disks.tos-prefix-url', [
+            'driver' => 'tos',
+            'key' => 'aW52YWxpZC1rZXk=',
+            'secret' => 'aW52YWxpZC1zZWNyZXQ=',
+            'region' => 'cn-beijing',
+            'bucket' => 'your-bucket',
+            'endpoint' => 'https://your-endpoint',
+            'root' => 'root',
+            'prefix' => 'prefix',
+        ]);
+        Config::set('filesystems.disks.tos-read-only-and-prefix-url', [
+            'driver' => 'tos',
+            'key' => 'aW52YWxpZC1rZXk=',
+            'secret' => 'aW52YWxpZC1zZWNyZXQ=',
+            'region' => 'cn-beijing',
+            'bucket' => 'your-bucket',
+            'endpoint' => 'https://your-endpoint',
+            'root' => 'root',
+            'prefix' => 'prefix',
+            'read-only' => true,
+        ]);
     }
 }

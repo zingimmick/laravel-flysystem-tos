@@ -7,4 +7,4 @@ parameters:
         - src
         - tests
     ignoreErrors:
-        - '#Call to an undefined method League\\Flysystem\\FilesystemInterface::getAdapter\(\).#'
+        - '#Parameter \#1 \$query of method Tos\\Model\\PreSignedURLInput::setQuery\(\) expects array\<string\>, array\<string, mixed\> given.#'
