@@ -93,11 +93,11 @@ final class DriverTest extends TestCase
         $this->assertSame('/test', $uri->getPath());
         $query = explode('&', $uri->getQuery());
         asort($query);
-
+        $date = Carbon::now()->format('Ymd');
         $this->assertEmpty(array_diff(
             [
                 'X-Tos-Algorithm=TOS4-HMAC-SHA256',
-                'X-Tos-Credential=aW52YWxpZC1rZXk%3D%2F20240401%2Fcn-beijing%2Ftos%2Frequest',
+                sprintf('X-Tos-Credential=aW52YWxpZC1rZXk%%3D%%2F%s%%2Fcn-beijing%%2Ftos%%2Frequest', $date),
                 'X-Tos-SignedHeaders=host',
             ],
             array_values($query)
