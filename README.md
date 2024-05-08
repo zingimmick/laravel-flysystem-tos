@@ -2,7 +2,7 @@
 
 TOS storage filesystem for Laravel based on [zing/flysystem-tos](https://github.com/zingimmick/flysystem-tos)
 
-[![Build Status](https://github.com/zingimmick/laravel-flysystem-tos/workflows/tests/badge.svg)](https://github.com/zingimmick/laravel-flysystem-tos/actions)
+[![Build Status](https://github.com/zingimmick/laravel-flysystem-tos/actions/workflows/tests.yml/badge.svg?branch=2.x)](https://github.com/zingimmick/laravel-flysystem-tos/actions)
 [![Code Coverage](https://codecov.io/gh/zingimmick/laravel-flysystem-tos/branch/2.x/graph/badge.svg)](https://codecov.io/gh/zingimmick/laravel-flysystem-tos)
 [![Latest Stable Version](https://poser.pugx.org/zing/laravel-flysystem-tos/v/stable.svg)](https://packagist.org/packages/zing/laravel-flysystem-tos)
 [![Total Downloads](https://poser.pugx.org/zing/laravel-flysystem-tos/downloads)](https://packagist.org/packages/zing/laravel-flysystem-tos)
