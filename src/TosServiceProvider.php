@@ -21,6 +21,9 @@ use Zing\Flysystem\Tos\TosAdapter as Adapter;
  */
 class TosServiceProvider extends ServiceProvider
 {
+    /**
+     * Register the TOS driver creator Closure.
+     */
     public function boot(): void
     {
         Storage::extend('tos', static function ($app, $config): FilesystemAdapter {
