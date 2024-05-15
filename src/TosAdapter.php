@@ -12,6 +12,9 @@ use Tos\Model\PreSignedURLInput;
 use Tos\TosClient;
 use Zing\Flysystem\Tos\TosAdapter as Adapter;
 
+/**
+ * FilesystemAdapter for TOS
+ */
 class TosAdapter extends FilesystemAdapter
 {
     use Conditionable;

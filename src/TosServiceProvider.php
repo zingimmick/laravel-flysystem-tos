@@ -16,6 +16,9 @@ use Tos\TosClient;
 use Zing\Flysystem\Tos\PortableVisibilityConverter;
 use Zing\Flysystem\Tos\TosAdapter as Adapter;
 
+/**
+ * ServiceProvider for TOS
+ */
 class TosServiceProvider extends ServiceProvider
 {
     public function boot(): void
