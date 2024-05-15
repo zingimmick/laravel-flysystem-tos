@@ -16,8 +16,14 @@ use Tos\TosClient;
 use Zing\Flysystem\Tos\PortableVisibilityConverter;
 use Zing\Flysystem\Tos\TosAdapter as Adapter;
 
+/**
+ * ServiceProvider for TOS.
+ */
 class TosServiceProvider extends ServiceProvider
 {
+    /**
+     * Register the TOS driver creator Closure.
+     */
     public function boot(): void
     {
         Storage::extend('tos', static function ($app, $config): FilesystemAdapter {
