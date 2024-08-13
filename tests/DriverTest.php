@@ -97,7 +97,7 @@ final class DriverTest extends TestCase
         $this->assertEmpty(array_diff(
             [
                 'X-Tos-Algorithm=TOS4-HMAC-SHA256',
-                sprintf('X-Tos-Credential=aW52YWxpZC1rZXk%%3D%%2F%s%%2Fcn-beijing%%2Ftos%%2Frequest', $date),
+                \sprintf('X-Tos-Credential=aW52YWxpZC1rZXk%%3D%%2F%s%%2Fcn-beijing%%2Ftos%%2Frequest', $date),
                 'X-Tos-SignedHeaders=host',
             ],
             array_values($query)
