@@ -36,8 +36,8 @@ return [
         'tos' => [
             'driver' => 'tos',
             'root' => '',
-            'access_key_id' => env('TOS_ACCESS_KEY_ID'),
-            'access_key_secret' => env('TOS_ACCESS_KEY_SECRET'),
+            'key' => env('TOS_ACCESS_KEY_ID'),
+            'secret' => env('TOS_ACCESS_KEY_SECRET'),
             'bucket' => env('TOS_BUCKET'),
             'endpoint' => env('TOS_ENDPOINT'),
             'is_cname' => env('TOS_IS_CNAME', false),
