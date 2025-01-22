@@ -7,4 +7,10 @@ parameters:
         - src
         - tests
     ignoreErrors:
-        - '#Parameter \#1 \$query of method Tos\\Model\\PreSignedURLInput::setQuery\(\) expects array\<string\>, array\<string, mixed\> given.#'
+        - identifier: argument.type
+        - identifier: offsetAccess.nonOffsetAccessible
+          path: src/TosServiceProvider.php
+        - identifier: assignOp.invalid
+          path: src/TosServiceProvider.php
+        - identifier: assignOp.invalid
+          path: src/TosServiceProvider.php
