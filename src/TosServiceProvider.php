@@ -55,6 +55,7 @@ class TosServiceProvider extends ServiceProvider
                 'token' => 'securityToken',
                 'region' => 'region',
                 'endpoint' => 'endpoint',
+                'bucket_endpoint' => 'isCustomDomain',
                 'http.verify' => 'enableVerifySSL',
                 'http.read_timeout' => 'socketTimeout',
                 'http.connect_timeout' => 'connectionTimeout',
