@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 2.1.0 - 2025-02-24
+
+<!-- Release notes generated using configuration in .github/release.yml at 2.x -->
+### What's Changed
+
+#### Other Changes
+
+* Use larastan/larastan instead of nunomaduro/larastan by @zingimmick in https://github.com/zingimmick/laravel-flysystem-tos/pull/27
+* Support for Laravel 12 by @zingimmick in https://github.com/zingimmick/laravel-flysystem-tos/pull/28
+
+**Full Changelog**: https://github.com/zingimmick/laravel-flysystem-tos/compare/2.0.1...2.1.0
+
 ## 2.0.1 - 2025-01-22
 
 <!-- Release notes generated using configuration in .github/release.yml at 2.x -->
