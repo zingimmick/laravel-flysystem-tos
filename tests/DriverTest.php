@@ -15,7 +15,7 @@ use Zing\Flysystem\Tos\TosAdapter;
  */
 final class DriverTest extends TestCase
 {
-    public function testDriverRegistered(): void 
+    public function testDriverRegistered(): void
     {
         $this->assertInstanceOf(TosAdapter::class, Storage::disk('tos')->getAdapter());
     }
