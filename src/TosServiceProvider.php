@@ -26,7 +26,7 @@ class TosServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Storage::extend('tos', static function ($app, $config): FilesystemAdapter {
+        Storage::extend('tos', static function ($app, array $config): FilesystemAdapter {
             $root = $config['root'] ?? '';
             $options = $config['options'] ?? [];
             $portableVisibilityConverter = new PortableVisibilityConverter(
